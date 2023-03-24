@@ -63,7 +63,7 @@ namespace WebCrawler
 					downloadedOfferPageHtmlDoc.LoadHtml(downloadedOfferPage);
 
 					var button = downloadedOfferPageHtmlDoc.DocumentNode
-						.SelectSingleNode(".//div[@class='product__desctiption']").Descendants()
+						.SelectSingleNode(".//div[@class='product__description']").Descendants()
 						.FirstOrDefault(node => node.InnerText == config["App:TextToFind"]);
 
 					offer.Description = button?.NextSibling.InnerText;
